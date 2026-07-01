@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "GitHub Hidden Threads",
+  "version": "1.0.0",
+  "description": "Expand hidden threads on GitHub.",
+  "icons": {
+    "16": "icons/image.png",
+    "32": "icons/image.png",
+    "48": "icons/image.png",
+    "128": "icons/image.png"
+  },
+  "action": {
+    "default_title": "GitHub Hidden Threads",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/image.png",
+      "32": "icons/image.png",
+      "48": "icons/image.png",
+      "128": "icons/image.png"
+    }
+  },
+  "permissions": ["activeTab", "scripting", "storage"]
+}

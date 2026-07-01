@@ -1,0 +1,209 @@
+<!doctype html>
+<html>
+	<head>
+		<title>GitHub Hidden Threads</title>
+		<style>
+			:root {
+				color-scheme: dark;
+				--bg: #0d1117;
+				--panel: #161b22;
+				--panel-hover: #21262d;
+				--border: #30363d;
+				--text: #e6edf3;
+				--muted: #959ea7;
+				--green: #238636;
+				--green-hover: #2ea043;
+				--danger: #ff554d;
+				--warning: #d29922;
+				--success: #3fb950;
+			}
+
+			* {
+				box-sizing: border-box;
+			}
+
+			body {
+				width: 384px;
+				margin: 0;
+				padding: 18px;
+				overflow: hidden;
+				background: var(--panel);
+				color: var(--text);
+				font-size: 14px;
+				font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+			}
+
+			.popup {
+				animation: fadeIn 140ms ease-out;
+			}
+
+			.header {
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				gap: 12px;
+				margin-bottom: 18px;
+			}
+
+			h1 {
+				margin: 0;
+				font-size: 16px;
+				font-weight: 600;
+			}
+
+			.pill {
+				padding: 4px 8px;
+				border: 1px solid var(--border);
+				border-radius: 999px;
+				color: var(--muted);
+				background: var(--panel-hover);
+				font-size: 12px;
+				line-height: 1;
+				white-space: nowrap;
+			}
+
+			.status {
+				position: relative;
+				min-height: 54px;
+				padding: 9px 4px 9px 22px;
+				border-left: 2px solid var(--border);
+				color: var(--muted);
+				font-size: 14px;
+				line-height: 1.5;
+				display: flex;
+				align-items: center;
+				transition:
+					border-color 160ms ease,
+					color 160ms ease,
+					transform 160ms ease,
+					opacity 160ms ease;
+			}
+
+			.status::before {
+				position: absolute;
+				top: calc(50% - 10px);
+				left: -10px;
+				width: 11px;
+				height: 11px;
+				border: 4px solid var(--panel);
+				border-radius: 50%;
+				background: var(--muted);
+				content: "";
+				transition: background 160ms ease;
+			}
+
+			.status.updating {
+				opacity: 0.72;
+				transform: translateY(1px);
+			}
+
+			.status.success {
+				color: var(--success);
+				border-color: rgba(63, 185, 80, 0.5);
+			}
+
+			.status.success::before {
+				background: var(--success);
+			}
+
+			.status.warning {
+				color: var(--warning);
+				border-color: rgba(210, 153, 34, 0.5);
+			}
+
+			.status.warning::before {
+				background: var(--warning);
+			}
+
+			.status.error {
+				color: var(--danger);
+				border-color: rgba(248, 81, 73, 0.5);
+			}
+
+			.status.error::before {
+				background: var(--danger);
+			}
+
+			button {
+				width: 100%;
+				margin-top: 16px;
+				border: 1px solid rgba(240, 246, 252, 0.1);
+				border-radius: 8px;
+				padding: 10px 14px;
+				color: #ffffff;
+				background: var(--green);
+				font-size: 14px;
+				font-weight: 600;
+				cursor: pointer;
+				transition:
+					background 140ms ease,
+					opacity 140ms ease,
+					transform 140ms ease;
+			}
+
+			button:hover:not(:disabled) {
+				background: var(--green-hover);
+			}
+
+			button:active:not(:disabled) {
+				transform: translateY(1px);
+			}
+
+			button:disabled {
+				opacity: 0.7;
+				cursor: not-allowed;
+			}
+
+			.loader {
+				display: none;
+				width: 12px;
+				height: 12px;
+				margin-right: 6px;
+				border: 2px solid rgba(255, 255, 255, 0.35);
+				border-top-color: #ffffff;
+				border-radius: 50%;
+				vertical-align: -2px;
+				animation: spin 700ms linear infinite;
+			}
+
+			button.loading .loader {
+				display: inline-block;
+			}
+
+			@keyframes fadeIn {
+				from {
+					opacity: 0;
+					transform: translateY(2px);
+				}
+				to {
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+
+			@keyframes spin {
+				to {
+					transform: rotate(360deg);
+				}
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="popup">
+			<div class="header">
+				<h1>GitHub Hidden Threads</h1>
+				<span id="pagePill" class="pill">Checking</span>
+			</div>
+
+			<div id="status" class="status">Checking this page...</div>
+
+			<button id="actionButton" disabled>
+				<span class="loader"></span>
+				<span id="buttonText">Checking...</span>
+			</button>
+		</div>
+
+		<script src="popup.js"></script>
+	</body>
+</html>
