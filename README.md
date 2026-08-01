@@ -2,9 +2,12 @@
 
 Expand hidden GitHub conversations with a single click. GitHub Thread Expander finds visible **Load more** controls on supported GitHub pages and opens the hidden comments, replies, and timeline items for you.
 
+[Chrome Web Store](https://chromewebstore.google.com/detail/dfofphmolabcjnlffcionmncbddpoopg?utm_source=item-share-cb) · [Website](https://devanshkaushik.github.io/github-thread-expander/) · [Privacy policy](https://devanshkaushik.github.io/github-thread-expander/privacy-policy/)
+
 ## Features
 
-- Expands up to 10 hidden thread sections per run
+- Expands hidden thread sections in batches of up to 10
+- Asks before continuing when more hidden threads remain
 - Waits for GitHub to finish loading before looking for more threads
 - Shows live progress in the extension popup
 - Remembers the current page's status for the browser session
@@ -32,7 +35,7 @@ The extension works on GitHub:
 1. Open a supported page on `github.com`.
 2. Select the GitHub Thread Expander icon in the browser toolbar.
 3. Select **Expand hidden threads**.
-4. If the extension reaches its 10-section limit, select **Check again** to continue.
+4. If more threads remain after 10 expansions, select **Continue expanding** to load the next batch.
 
 If you have an unsaved comment or review draft, save or discard it before running the extension.
 
@@ -44,7 +47,7 @@ The extension requests only the permissions needed for its popup-driven workflow
 - `scripting` - runs the thread-expansion logic on the active GitHub page
 - `storage` - keeps progress and result messages for the current browser session
 
-The extension has no background service, does not make its own network requests, and does not collect or transmit user data.
+The extension has no background service and does not make its own network requests or transmit user data. Page information required by the extension is processed locally. See the [privacy policy](https://devanshkaushik.github.io/github-thread-expander/privacy-policy/) for details.
 
 ## Development
 

@@ -1,4 +1,4 @@
-const INTERNAL_MAX_CLICKS = 10;
+const EXPANSION_BATCH_SIZE = 10;
 const STATE_POLL_INTERVAL_MS = 700;
 
 const STATUS_STORAGE_KEY = "githubLoadMoreStatus";
@@ -186,6 +186,20 @@ function renderSavedState(savedState) {
 		return true;
 	}
 
+	if (savedState.state === "paused") {
+		isRunning = false;
+		setStatus(
+			savedState.message ||
+				"Expanded 10 hidden threads. Continue to expand more?",
+			"warning"
+		);
+		setButton({
+			text: "Continue expanding",
+			disabled: false
+		});
+		return true;
+	}
+
 	if (savedState.state === "empty") {
 		isRunning = false;
 		setStatus(
@@ -340,8 +354,7 @@ async function runLoader() {
 	try {
 		const result = await callLoader(activeTabId, "start", [
 			{
-				maxClicks: INTERNAL_MAX_CLICKS,
-				firstRun: true
+				maxClicks: EXPANSION_BATCH_SIZE
 			}
 		]);
 

@@ -392,9 +392,13 @@
 		}
 
 		if (totalClicks >= maxClicks) {
+			const hasMoreThreads = findLoadMoreButtons().length > 0;
+
 			updateState({
-				state: "done",
-				message: `Expanded ${formatSectionCount(totalClicks)}. There may be more, so check again to continue.`,
+				state: hasMoreThreads ? "paused" : "done",
+				message: hasMoreThreads
+					? `Expanded ${formatSectionCount(totalClicks)}. Continue to expand more?`
+					: `Expanded ${formatSectionCount(totalClicks)}. You're caught up now.`,
 				finishedAt: Date.now()
 			});
 
