@@ -18,8 +18,6 @@ The extension works on GitHub:
 - Pull requests
 - Issues
 - Repository and organization discussions
-- Commits
-- Compare pages
 
 ## Install from source
 

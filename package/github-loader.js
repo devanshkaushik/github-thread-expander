@@ -48,14 +48,6 @@
 			name: "Org Discussion",
 			pattern: /^\/orgs\/[^/]+\/discussions(\/.*)?$/
 		},
-		{
-			name: "Commit",
-			pattern: /^\/[^/]+\/[^/]+\/commit\/[a-f0-9]{7,40}(\/.*)?$/
-		},
-		{
-			name: "Compare",
-			pattern: /^\/[^/]+\/[^/]+\/compare\/.+$/
-		}
 	];
 
 	const pageInstanceId =

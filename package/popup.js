@@ -127,7 +127,7 @@ function renderValidation(validation) {
 	if (!isValidPage) {
 		setPill("Unsupported");
 		setStatus(
-			"Open a GitHub PR, issue, discussion, commit, or compare page to use this.",
+			"Open a GitHub PR, issue, or discussion page to use this.",
 			"error"
 		);
 		setButton({
@@ -254,7 +254,7 @@ async function initializePopup() {
 		if (!activeTabId || !activeTabUrl.startsWith("https://github.com/")) {
 			setPill("Unsupported");
 			setStatus(
-				"Open a GitHub PR, issue, discussion, commit, or compare page to use this.",
+				"Open a GitHub PR, issue, or discussion page to use this.",
 				"error"
 			);
 			setButton({
