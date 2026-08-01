@@ -1,22 +1,22 @@
 {
   "manifest_version": 3,
-  "name": "GitHub Hidden Threads",
+  "name": "GitHub Thread Expander",
   "version": "1.0.0",
-  "description": "Expand hidden threads on GitHub.",
+  "description": "Instantly expand hidden threads on GitHub.",
   "icons": {
-    "16": "icons/image.png",
-    "32": "icons/image.png",
-    "48": "icons/image.png",
-    "128": "icons/image.png"
+    "16": "icons/icon_16x16.png",
+    "32": "icons/icon_32x32.png",
+    "48": "icons/icon_48x48.png",
+    "128": "icons/icon_128x128.png"
   },
   "action": {
-    "default_title": "GitHub Hidden Threads",
+    "default_title": "GitHub Thread Expander",
     "default_popup": "popup.html",
     "default_icon": {
-      "16": "icons/image.png",
-      "32": "icons/image.png",
-      "48": "icons/image.png",
-      "128": "icons/image.png"
+      "16": "icons/icon_16x16.png",
+      "32": "icons/icon_32x32.png",
+      "48": "icons/icon_48x48.png",
+      "128": "icons/icon_128x128.png"
     }
   },
   "permissions": ["activeTab", "scripting", "storage"]
