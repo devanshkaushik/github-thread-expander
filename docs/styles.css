@@ -78,6 +78,16 @@ img {
 	font-weight: 750;
 }
 
+.brand-name {
+	display: flex;
+	flex-direction: column;
+	line-height: 1.1;
+}
+
+.brand-name > span {
+	font-size: 0.78em;
+}
+
 .brand img {
 	width: 32px;
 	height: 32px;
@@ -167,7 +177,7 @@ p {
 }
 
 h1 {
-	max-width: 950px;
+	max-width: 1100px;
 	margin-inline: auto;
 	margin-bottom: 24px;
 	font-size: clamp(3rem, 7vw, 5.7rem);
@@ -187,7 +197,7 @@ h1 {
 }
 
 .hero-copy {
-	max-width: 660px;
+	max-width: 480px;
 	margin: 0 auto 32px;
 	color: var(--muted);
 	font-size: 19px;
